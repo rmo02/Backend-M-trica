@@ -1,5 +1,7 @@
+//chamando o express
 const express = require('express');
 const app = express();
+//chamando os models
 const User = require('./models/User');
 const Item = require('./models/Itens');
 
@@ -11,6 +13,7 @@ app.get('/', async (req, res) => {
     res.send("página inicial")
 });
 
+//rota para cadastrar usuario
 app.post('/cadastrar', async (req, res) => {
     //console.log(req.body);
 
@@ -29,6 +32,7 @@ app.post('/cadastrar', async (req, res) => {
     res.send("Página cadastrar")
 });
 
+//rota para cadastrar item
 app.post('/cadastrarItem', async (req, res) => {
     //console.log(req.body);
 
