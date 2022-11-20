@@ -51,7 +51,7 @@ app.post('/cadastrar', async (req, res) => {
     });    
 });
 
-//rota login
+//rota para fazer login
 app.post('/login', async (req, res) => {
 
     const user = await User.findOne({
@@ -64,14 +64,14 @@ app.post('/login', async (req, res) => {
     if(user === null){
         return res.status(400).json({
             erro: true,
-            mensagem: "Erro: Usuário ou a senha incorreta! Nenhum usuário com este e-mail"
+            mensagem: "Erro: Usuário ou a senha incorreta!"
         });
     }
 
     if(!(await bcrypt.compare(req.body.password, user.password))){
         return res.status(400).json({
             erro: true,
-            mensagem: "Erro: Usuário ou a senha incorreta! Senha incorreta!"
+            mensagem: "Erro: Usuário ou a senha incorreta!"
         });
     }
 
