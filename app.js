@@ -11,7 +11,7 @@ const Item = require('./models/Itens');
 
 app.use(express.json());
 
-
+//rota teste para admin
 app.get('/', eAdmin, async (req, res) => {
     await User.findAll({
         attributes: ['id', 'name', 'email'],
